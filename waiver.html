@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Consent for Treatment — Island Performance Health</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5efe2;
+    --paper: #faf5e8;
+    --ink: #000000;
+    --ink-soft: #1a1a1a;
+    --ocean: #062023;
+    --ocean-2: #0a3033;
+    --sand: #a37a2a;
+    --coral: #a82f0a;
+    --line: rgba(0,0,0,0.2);
+    --serif: "Instrument Serif", "Times New Roman", serif;
+    --sans: "Inter", system-ui, sans-serif;
+    --mono: "JetBrains Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+  body { font-size: 18px; line-height: 1.65; }
+  h1,h2,h3 { margin: 0; font-weight: 500; }
+  p { margin: 0; }
+  a { color: var(--ocean); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ---------- Header ---------- */
+  .waiver-header {
+    background: var(--ocean); color: #ffffff;
+    padding: 32px 0; border-bottom: 3px solid var(--sand);
+  }
+  .waiver-header .inner { max-width: 780px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; }
+  .logo-wrap { display: flex; align-items: center; gap: 14px; }
+  .logo-mark { width: 40px; height: 40px; border-radius: 50%; background: var(--ocean-2); position: relative; flex: none; border: 2px solid rgba(255,255,255,0.3); }
+  .logo-mark::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; border: 1.5px solid var(--sand); }
+  .logo-mark::after { content: ""; position: absolute; left: 50%; top: 50%; width: 13px; height: 13px; transform: translate(-50%,-50%); background: var(--sand); border-radius: 50%; }
+  .logo-text { font-family: var(--serif); font-size: 26px; }
+  .logo-text em { font-style: italic; }
+  .logo-sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(255,255,255,0.75); margin-top: 3px; }
+  .back-link { font-family: var(--mono); font-size: 12px; letter-spacing: 0.15em; color: rgba(255,255,255,0.8); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+  .back-link:hover { color: #ffffff; }
+
+  /* ---------- Main ---------- */
+  .waiver-main { max-width: 780px; margin: 0 auto; padding: 56px 32px 80px; }
+
+  .waiver-title-block { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 2px solid var(--ink); }
+  .waiver-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; color: var(--sand); font-weight: 600; margin-bottom: 16px; }
+  .waiver-title-block h1 { font-family: var(--serif); font-size: clamp(36px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); font-weight: 400; padding-bottom: 0.06em; }
+  .waiver-title-block h1 em { font-style: italic; color: var(--ocean); }
+  .waiver-title-block .subtitle { font-size: 17px; color: var(--ink-soft); margin-top: 14px; }
+
+  /* ---------- Patient Info Fields ---------- */
+  .patient-fields { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-bottom: 44px; }
+  .patient-fields-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 44px; }
+  @media (max-width: 720px) { .patient-fields, .patient-fields-2 { grid-template-columns: 1fr; } }
+  .field-group { display: flex; flex-direction: column; gap: 8px; }
+  .field-group label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; font-weight: 600; color: var(--ink); text-transform: uppercase; }
+  .field-group input {
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    padding: 14px 16px;
+    font-family: var(--sans); font-size: 17px;
+    background: var(--paper); color: var(--ink);
+    outline: none;
+    transition: border-color .2s;
+    width: 100%;
+  }
+  .field-group input:focus { border-color: var(--ocean); }
+
+  /* ---------- Consent Text ---------- */
+  .consent-block { background: var(--paper); border: 2px solid var(--ink); border-radius: 6px; padding: 36px 40px; margin-bottom: 40px; }
+  @media (max-width: 560px) { .consent-block { padding: 24px 20px; } }
+  .consent-block h2 { font-family: var(--serif); font-size: 28px; color: var(--ink); margin-bottom: 24px; font-weight: 400; padding-bottom: 0.05em; }
+  .consent-block p { font-size: 17px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 18px; }
+  .consent-block p:last-child { margin-bottom: 0; }
+
+  /* ---------- Signature Block ---------- */
+  .sig-block { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-bottom: 40px; }
+  @media (max-width: 560px) { .sig-block { grid-template-columns: 1fr; } }
+
+  /* ---------- Actions ---------- */
+  .waiver-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; padding-top: 32px; border-top: 2px solid var(--line); }
+  .btn-generate {
+    background: var(--ocean); color: #ffffff;
+    padding: 18px 32px; border-radius: 6px;
+    font-weight: 600; font-size: 17px;
+    display: inline-flex; align-items: center; gap: 12px;
+    border: 2px solid var(--ocean);
+    transition: all .2s; cursor: pointer;
+    font-family: var(--sans);
+  }
+  .btn-generate:hover { background: transparent; color: var(--ocean); }
+  .btn-reset {
+    padding: 18px 24px; border-radius: 6px;
+    font-weight: 600; font-size: 17px;
+    display: inline-flex; align-items: center; gap: 12px;
+    color: var(--ink); border: 2px solid var(--line);
+    background: transparent; transition: all .2s; cursor: pointer;
+    font-family: var(--sans);
+  }
+  .btn-reset:hover { border-color: var(--ink); }
+  .action-note { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-soft); }
+
+  /* ---------- Print / PDF styles ---------- */
+  @media print {
+    html, body { background: #ffffff; font-size: 13px; }
+    .waiver-header { background: #ffffff !important; color: #000000 !important; border-bottom: 2px solid #000; padding: 18px 0; }
+    .logo-mark { border-color: #000 !important; background: #ffffff !important; }
+    .logo-mark::before { border-color: #8a6418 !important; }
+    .logo-mark::after { background: #8a6418 !important; }
+    .logo-sub, .back-link { color: #555 !important; }
+    .waiver-main { padding: 24px 32px; }
+    .waiver-actions, .btn-generate, .btn-reset, .action-note { display: none !important; }
+    .consent-block { border: 1px solid #aaa; padding: 24px 28px; }
+    .field-group input { border: none; border-bottom: 1px solid #000; border-radius: 0; background: transparent; padding: 8px 0; }
+    .sig-block { page-break-inside: avoid; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header class="waiver-header">
+  <div class="inner">
+    <div class="logo-wrap">
+      <div class="logo-mark" aria-hidden="true"></div>
+      <div>
+        <div class="logo-text">Island <em>PT</em></div>
+        <div class="logo-sub">MAUI · HAWAI'I</div>
+      </div>
+    </div>
+    <a href="index.html" class="back-link">← Back to site</a>
+  </div>
+</header>
+
+<main class="waiver-main">
+
+  <div class="waiver-title-block">
+    <div class="waiver-eyebrow">PATIENT INTAKE FORM</div>
+    <h1>Consent for <em>Treatment</em></h1>
+    <p class="subtitle">Island Performance Health, LLC — Please read carefully before signing.</p>
+  </div>
+
+  <form id="waiver-form" action="https://formsubmit.co/marketing@outworkemdigital.com" method="POST">
+
+  <!-- Formsubmit config -->
+  <input type="hidden" name="_subject" value="New Consent for Treatment Submission" />
+  <input type="hidden" name="_from" value="Island PT Website Form" />
+  <input type="hidden" name="_cc" id="fs-cc" value="" />
+  <input type="hidden" name="_replyto" id="fs-replyto" value="" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_next" value="https://islandptmaui.com/waiver-thanks.html" />
+  <input type="hidden" name="consent_text" value="I, the undersigned, do hereby agree and give my consent for Island Performance Health, LLC to provide medical care and treatment considered necessary and proper in diagnosing and/or treating my condition. I have read the full consent form and accept the risks of physical therapy treatment." />
+
+  <!-- Patient Info -->
+  <div class="patient-fields">
+    <div class="field-group">
+      <label for="patient-name">Patient Name</label>
+      <input type="text" id="patient-name" name="patient_name" placeholder="Full legal name" autocomplete="name" required />
+    </div>
+    <div class="field-group">
+      <label for="patient-email">Email Address</label>
+      <input type="email" id="patient-email" name="patient_email" placeholder="patient@email.com" autocomplete="email" required />
+    </div>
+    <div class="field-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="Date of Birth" required />
+    </div>
+  </div>
+
+  <!-- Phone -->
+  <div class="patient-fields-2">
+    <div class="field-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="(808) 555-0000" autocomplete="tel" required />
+    </div>
+  </div>
+
+  <!-- Consent Text -->
+  <div class="consent-block">
+    <h2>Consent for Treatment</h2>
+    <p>Thank you for choosing Island Performance Health, LLC for your physical therapy needs. Please read this form carefully and sign below to acknowledge your understanding and agreement.</p>
+    <p>I, the undersigned, do hereby agree and give my consent for Island Performance Health, LLC to provide medical care and treatment considered necessary and proper in diagnosing and/or treating my condition. No treatment for any condition or disease is without risk of side effects and physical therapy is no exception. Fortunately, unwanted side effects are typically rare, minor and/or transient for the techniques that will be utilized by the therapist(s). I have the right to ask questions and decline any treatment at any time.</p>
+    <p>By signing below you indicate you are aware of, and accept the risks of physical therapy treatment, and give your full consent for the therapist to provide such treatment. We take great care with our patients and the resolution of your symptoms is our primary concern. Please feel free to express concerns or questions to your therapist.</p>
+  </div>
+
+  <!-- Signature + Date -->
+  <div class="sig-block">
+    <div class="field-group">
+      <label for="signature">Patient / Guardian Signature</label>
+      <input type="text" id="signature" name="signature" placeholder="Type full name to sign" required />
+    </div>
+    <div class="field-group">
+      <label for="sig-date">Date</label>
+      <input type="date" id="sig-date" name="sig_date" required />
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="waiver-actions">
+    <button type="submit" class="btn-generate" onclick="return submitWaiver()">
+      Submit <span aria-hidden="true">→</span>
+    </button>
+  </div>
+
+  </form>
+</main>
+
+<script>
+  document.getElementById("sig-date").value = new Date().toISOString().split("T")[0];
+
+  function submitWaiver() {
+    const name  = document.getElementById("patient-name").value.trim();
+    const email = document.getElementById("patient-email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const sig   = document.getElementById("signature").value.trim();
+    if (!name)  { alert("Please enter the patient name."); return false; }
+    if (!email) { alert("Please enter the patient email."); return false; }
+    if (!phone) { alert("Please enter the patient phone number."); return false; }
+    if (!sig)   { alert("Please provide a signature."); return false; }
+    // Set CC and reply-to dynamically to patient email
+    document.getElementById("fs-cc").value = "ryan@outworkemdigital.com,IslandPerformanceHealth@gmail.com";
+    document.getElementById("fs-replyto").value = email;
+    return true;
+  }
+</script>
+
+</body>
+</html>

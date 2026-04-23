@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thank You — Island Performance Health</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5efe2;
+    --paper: #faf5e8;
+    --ink: #000000;
+    --ink-soft: #1a1a1a;
+    --ocean: #062023;
+    --sand: #a37a2a;
+    --serif: "Instrument Serif", "Times New Roman", serif;
+    --sans: "Inter", system-ui, sans-serif;
+    --mono: "JetBrains Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+  h1, h2 { margin: 0; font-weight: 400; }
+  p { margin: 0; }
+  a { color: var(--ocean); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* Header */
+  .header {
+    background: var(--ocean); color: #ffffff;
+    padding: 28px 0; border-bottom: 3px solid var(--sand);
+  }
+  .header .inner { max-width: 780px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 14px; }
+  .logo-mark { width: 38px; height: 38px; border-radius: 50%; background: transparent; position: relative; flex: none; border: 2px solid rgba(255,255,255,0.3); }
+  .logo-mark::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; border: 1.5px solid var(--sand); }
+  .logo-mark::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; transform: translate(-50%,-50%); background: var(--sand); border-radius: 50%; }
+  .logo-text { font-family: var(--serif); font-size: 24px; }
+  .logo-text em { font-style: italic; }
+  .logo-sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(255,255,255,0.7); margin-top: 2px; }
+
+  /* Main */
+  .main { max-width: 780px; margin: 0 auto; padding: 80px 32px 100px; text-align: center; }
+  .check { width: 80px; height: 80px; border-radius: 50%; background: var(--ocean); color: #ffffff; display: flex; align-items: center; justify-content: center; margin: 0 auto 40px; font-size: 36px; }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; color: var(--sand); font-weight: 600; margin-bottom: 20px; }
+  h1 { font-family: var(--serif); font-size: clamp(38px, 6vw, 64px); line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); padding-bottom: 0.06em; margin-bottom: 24px; }
+  h1 em { font-style: italic; color: var(--ocean); }
+  .sub { font-size: 19px; line-height: 1.7; color: var(--ink-soft); max-width: 48ch; margin: 0 auto 48px; }
+  .divider { width: 60px; height: 2px; background: var(--ink); margin: 0 auto 48px; }
+  .info-box { background: var(--paper); border: 2px solid var(--ink); border-radius: 6px; padding: 32px 36px; margin-bottom: 48px; text-align: left; }
+  .info-box h2 { font-family: var(--serif); font-size: 22px; margin-bottom: 16px; color: var(--ink); }
+  .info-box p { font-size: 17px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 10px; }
+  .info-box p:last-child { margin-bottom: 0; }
+  .btn-home {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--ocean); color: #ffffff;
+    padding: 18px 32px; border-radius: 6px;
+    font-weight: 600; font-size: 17px;
+    text-decoration: none; transition: all .2s;
+    border: 2px solid var(--ocean);
+  }
+  .btn-home:hover { background: transparent; color: var(--ocean); }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="inner">
+    <div class="logo-mark" aria-hidden="true"></div>
+    <div>
+      <div class="logo-text">Island <em>PT</em></div>
+      <div class="logo-sub">MAUI · HAWAI'I</div>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="check" aria-hidden="true">✓</div>
+  <div class="eyebrow">FORM SUBMITTED</div>
+  <h1>Thank you for <em>signing.</em></h1>
+  <p class="sub">Your consent form has been received by Island Performance Health. A copy has been sent to your email for your records.</p>
+  <a href="https://islandptmaui.com/" class="btn-home">Back to Island PT →</a>
+</main>
+
+</body>
+</html>
