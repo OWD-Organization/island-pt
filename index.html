@@ -114,6 +114,15 @@
   }
   .btn-primary:hover { background: transparent; color: #ffffff; }
   .btn-primary .arrow { font-size: 22px; }
+  .btn-secondary {
+    background: transparent; color: #ffffff;
+    padding: 22px 34px; border-radius: 6px;
+    font-weight: 600; font-size: 18px;
+    display: inline-flex; align-items: center; gap: 14px;
+    border: 2px solid rgba(255,255,255,0.5);
+    transition: all .2s; cursor: pointer; font-family: var(--sans);
+  }
+  .btn-secondary:hover { border-color: #ffffff; background: rgba(255,255,255,0.1); }
   .btn-outline {
     padding: 22px 30px; font-weight: 600; font-size: 18px;
     display: inline-flex; align-items: center; gap: 14px;
@@ -351,16 +360,15 @@
     <div>
       <h1>
         Recover with confidence.<br />
-        Restore your <em>strength.</em><br />
-        Enjoy life <span class="highlight">fully.</span>
+        Perform your <em>best.</em><br />
+        Live life <span class="highlight">fully.</span>
       </h1>
       <p class="hero-sub">
-        Personalized physical therapy, spine care, and mobility rehabilitation on Maui. We work one-to-one with every patient to relieve pain and help you move with ease — at any age.
+        We help athletes and people with back pain live pain free and perform at their peak.
       </p>
       <div class="hero-ctas">
-        <button class="btn-primary book-btn">
-          Message Teddy
-          <span class="arrow" aria-hidden="true">→</span>
+        <button class="btn-primary assess-scroll-btn">
+          Free Running Assessment <span class="arrow" aria-hidden="true">→</span>
         </button>
       </div>
     </div>
@@ -700,7 +708,7 @@ window.addEventListener("scroll", () => {
 // ---------- Book an Assessment buttons → Instagram DM ----------
 
 document.querySelectorAll(".assess-scroll-btn").forEach(btn => {
-  btn.addEventListener("click", () => window.open(BOOK_URL, "_blank", "noopener"));
+  btn.addEventListener("click", () => document.getElementById("assessment").scrollIntoView({ behavior: "smooth" }));
 });
 
 // ---------- Book buttons (open Instagram DM) ----------
