@@ -368,7 +368,7 @@
       </p>
       <div class="hero-ctas">
         <button class="btn-primary assess-scroll-btn">
-          Book a Running Assessment <span class="arrow" aria-hidden="true">→</span>
+          Request Running Assessment <span class="arrow" aria-hidden="true">→</span>
         </button>
       </div>
     </div>
@@ -415,7 +415,7 @@
           <div class="runzy-feat"><span class="runzy-check">✓</span>Personalized report with recommendations</div>
         </div>
         <button class="runzy-cta book-btn">
-          Reserve Your Spot <span aria-hidden="true">→</span>
+          Request Running Assessment <span aria-hidden="true">→</span>
         </button>
       </div>
       <div class="runzy-visual">
@@ -661,7 +661,7 @@
     <h2 id="cta-h">Ready to move <em>comfortably</em> again?</h2>
     <p class="sub">Let us understand what you are dealing with, build a plan that fits, and help you return to the activities you love. A limited number of consultations remain this month.</p>
     <button class="final-btn book-btn">
-      Message Teddy <span aria-hidden="true">→</span>
+      Request Running Assessment <span aria-hidden="true">→</span>
     </button>
   </div>
 </section>
@@ -705,15 +705,8 @@ window.addEventListener("scroll", () => {
   nav.classList.toggle("scrolled", window.scrollY > 80);
 }, { passive: true });
 
-// ---------- Book an Assessment buttons → Instagram DM ----------
-
-document.querySelectorAll(".assess-scroll-btn").forEach(btn => {
-  btn.addEventListener("click", () => document.getElementById("assessment").scrollIntoView({ behavior: "smooth" }));
-});
-
-// ---------- Book buttons (open Instagram DM) ----------
-document.querySelectorAll(".book-btn").forEach(btn => {
-  btn.addEventListener("click", () => window.open(BOOK_URL, "_blank", "noopener"));
+document.querySelectorAll(".assess-scroll-btn, .book-btn").forEach(btn => {
+  btn.addEventListener("click", () => window.location.href = "waiver.html");
 });
 </script>
 </body>
