@@ -16,12 +16,12 @@
     --ink: #000000;
     --ink-soft: #1a1a1a;
     --muted: #3d3d3d;
-    --ocean: #062023;
-    --ocean-2: #0a3033;
-    --ocean-3: #0f4448;
-    --sand: #a37a2a;
-    --sand-deep: #8a6418;
-    --coral: #a82f0a;
+    --ocean: #38421c;
+    --ocean-2: #3a4120;
+    --ocean-3: #2e3318;
+    --sand: #6D4019;
+    --sand-deep: #5a3414;
+    --coral: #8B3A10;
     --line: rgba(0,0,0,0.25);
     --line-strong: rgba(0,0,0,0.45);
     --serif: "Instrument Serif", "Times New Roman", serif;
@@ -48,33 +48,24 @@
   .skip-link:focus { left: 12px; }
 
   /* ---------- Nav ---------- */
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: rgba(245,239,226,0.0); transition: all .3s; color: #ffffff; }
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: var(--paper); border-bottom: 2px solid var(--ink); transition: all .3s; color: var(--ink); }
   .nav.scrolled { background: var(--paper); border-bottom: 2px solid var(--ink); color: var(--ink); }
-  .nav .nav-link { color: #ffffff; }
-  .nav .nav-cta { background: #ffffff; color: var(--ocean); }
+  .nav .nav-link { color: var(--ink); }
+  .nav .nav-cta { background: var(--ocean); color: #ffffff; border-color: var(--ocean); }
   .nav.scrolled .nav-link { color: var(--ink); }
   .nav.scrolled .nav-cta { background: var(--ocean) !important; color: #ffffff !important; border-color: var(--ocean) !important; }
   .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 12px; }
   @media (max-width: 860px) {
     .nav .container { padding-left: 15px; padding-right: 15px; }
     .nav-inner { height: auto; padding-top: 12px; padding-bottom: 12px; }
-    .logo-mark { width: 32px; height: 32px; }
-    .logo-mark::after { width: 11px; height: 11px; }
-    .logo-word { font-size: 22px !important; }
-    .logo-sub { font-size: 8px !important; letter-spacing: 0.16em; margin-top: 3px; }
+    .logo img { width: 130px; }
     .nav-cta { padding: 12px 19px !important; font-size: 13px; gap: 5px; white-space: nowrap; }
   }
   @media (max-width: 395px) {
     .nav-cta { padding: 12px 8px !important; font-size: 15px !important; }
   }
-  .logo { display: flex; align-items: center; gap: 14px; }
-  .logo-mark { width: 44px; height: 44px; border-radius: 50%; background: var(--ocean); position: relative; overflow: hidden; flex: none; border: 2px solid rgba(255,255,255,0.3); }
-  .logo-mark::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; border: 1.5px solid var(--sand); }
-  .logo-mark::after { content: ""; position: absolute; left: 50%; top: 50%; width: 16px; height: 16px; transform: translate(-50%,-50%); background: var(--sand); border-radius: 50%; }
-  .logo-word { font-family: var(--serif); font-size: 30px; white-space: nowrap; line-height: 1; }
-  .logo-word em { font-style: italic; }
-  .logo-sub { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; margin-top: 4px; font-weight: 600; color: rgba(255,255,255,0.85); }
-  .nav.scrolled .logo-sub { color: rgba(11,11,11,1); }
+  .logo { display: flex; align-items: center; }
+  .logo img { width: 150px; height: auto; display: block; }
   .nav-links { display: flex; gap: 36px; font-size: 17px; font-weight: 500; }
   .nav-link { position: relative; padding: 8px 2px; letter-spacing: 0.01em; border-bottom: 2px solid transparent; transition: border-color .2s; }
   .nav-link:hover { border-bottom-color: currentColor; }
@@ -305,13 +296,20 @@
   .runzy-check { width: 28px; height: 28px; border-radius: 50%; background: rgba(240,198,108,0.2); border: 1.5px solid #f0c66c; display: grid; place-items: center; font-size: 13px; color: #f0c66c; flex: none; }
   .runzy-cta { background: #f0c66c; color: var(--ocean); padding: 22px 34px; border-radius: 6px; font-weight: 600; font-size: 18px; display: inline-flex; align-items: center; gap: 14px; border: 2px solid #f0c66c; transition: all .2s; cursor: pointer; }
   .runzy-cta:hover { background: transparent; color: #f0c66c; }
-  .runzy-img-wrap { aspect-ratio: 4/3.5; border-radius: 6px; overflow: hidden; background: var(--ocean-2); position: relative; border: 2px solid rgba(255,255,255,0.25); margin-bottom: 24px; }
-  .runzy-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; background: var(--ocean-2); }
-  .runzy-img-tag { position: absolute; bottom: 20px; left: 20px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; font-weight: 600; color: #ffffff; background: rgba(6,32,35,0.85); padding: 10px 14px; border-radius: 4px; border: 1.5px solid #f0c66c; }
-  .runzy-proof { display: flex; flex-direction: column; gap: 18px; }
-  .runzy-proof-item { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; background: var(--ocean-2); border-radius: 6px; border: 1.5px solid rgba(255,255,255,0.18); font-size: 17px; color: rgba(255,255,255,0.9); line-height: 1.5; }
-  .runzy-proof-item strong { color: #f0c66c; display: block; font-family: var(--mono); font-size: 12px; letter-spacing: 0.15em; margin-bottom: 4px; }
-  .runzy-proof-icon { font-size: 22px; flex: none; margin-top: 2px; }
+  .runzy-gallery { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px auto; gap: 8px; }
+  .runzy-gal-1 { grid-column: 1; grid-row: 1 / 3; border-radius: 6px; overflow: hidden; }
+  .runzy-gal-2 { grid-column: 2; grid-row: 1; border-radius: 6px; overflow: hidden; }
+  .runzy-gal-3 { grid-column: 2; grid-row: 2; border-radius: 6px; overflow: hidden; }
+  .runzy-gal-4 { grid-column: 1 / 3; grid-row: 3; border-radius: 6px; overflow: hidden; aspect-ratio: 16/7; }
+  .runzy-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+  .runzy-gallery img:hover { transform: scale(1.03); }
+  @media (max-width: 900px) {
+    .runzy-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 160px 160px auto; gap: 6px; }
+  }
+  @media (max-width: 560px) {
+    .runzy-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 120px 120px auto; }
+    .runzy-gal-4 { aspect-ratio: 4/3; }
+  }
 
   /* ---------- Footer ---------- */
   footer { background: #000000; color: #ffffff; padding: 90px 0 40px; }
@@ -335,11 +333,7 @@
 <nav class="nav" id="nav" aria-label="Primary">
   <div class="container nav-inner">
     <a href="#" class="logo" aria-label="Island PT — home">
-      <div class="logo-mark" aria-hidden="true"></div>
-      <div>
-        <div class="logo-word">Island <em>PT</em></div>
-        <div class="logo-sub">MAUI · HAWAI'I</div>
-      </div>
+      <img src="img/logo-test.webp" alt="Island PT" />
     </a>
     <div class="nav-links" role="navigation">
       <a class="nav-link" href="#approach">Our Approach</a>
@@ -419,21 +413,18 @@
         </button>
       </div>
       <div class="runzy-visual">
-        <div class="runzy-img-wrap">
-          <img src="https://kokua-physical-therapy-vermont.com/wp-content/uploads/2026/04/island-5.png" alt="RunEasi running gait analysis" />
-        </div>
-        <div class="runzy-proof">
-          <div class="runzy-proof-item">
-            <div class="runzy-proof-icon">📍</div>
-            <div>
-              <strong>Where</strong><br />Maui Marathon start/finish area, Kāʻanapali
-            </div>
+        <div class="runzy-gallery">
+          <div class="runzy-gal-1">
+            <img src="img/runeasi campaign-137.jpg" alt="RunEasi assessment in action" />
           </div>
-          <div class="runzy-proof-item">
-            <div class="runzy-proof-icon">📅</div>
-            <div>
-              <strong>When</strong><br />Race weekend — pre-race expo &amp; morning of
-            </div>
+          <div class="runzy-gal-2">
+            <img src="img/runeasi jpegs-155.jpg" alt="RunEasi gait analysis" />
+          </div>
+          <div class="runzy-gal-3">
+            <img src="img/runeasi jpegs-348.jpg" alt="RunEasi running assessment" />
+          </div>
+          <div class="runzy-gal-4">
+            <img src="img/Phases of Runeasi.png" alt="Phases of RunEasi assessment" style="object-position: center center;" />
           </div>
         </div>
       </div>
